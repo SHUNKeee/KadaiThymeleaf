@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class InputController {
 
-    @Value("${thymeleaf.task}")
-    private String taskText;
 
     @GetMapping("/input")
     public String getInput(@RequestParam(required = false) String previous, Model model) {
-        model.addAttribute("task", taskText);
+        model.addAttribute("task");
         if (previous != null) {
             model.addAttribute("previous", previous);
         }

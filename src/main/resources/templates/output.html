@@ -5,9 +5,9 @@
     <title>Thymeleaf課題</title>
 </head>
 <body>
-    <h1 th:text="${task}">Thymeleaf課題</h1>
-    <h2>出力画面</h2>
+    <h1 th:text="#{TL.title}"></h1>
+    <h2 th:text="#{TL.output}"></h2>
     <p>入力された値は「<span th:text="${inputValue}"></span>」です。</p>
-    <a th:href="@{/input(previous=${inputValue})}">入力画面へ戻る</a>
+    <a th:href="'/input?previous=' + ${inputValue}" th:text="#{TL.return}"></a>
 </body>
 </html>
